@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Learn With Alvin</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f7fb;
+}
+
+/* HERO */
+.hero {
+  background: linear-gradient(135deg, #0d47a1, #1976d2, #00acc1);
+  color: white;
+  padding: 60px 20px;
+}
+
+.hero h1 {
+  font-size: 40px;
+  max-width: 600px;
+}
+
+.stats {
+  display: flex;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.stat {
+  background: rgba(255,255,255,0.1);
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* COURSE SECTION */
+.container {
+  padding: 40px 20px;
+}
+
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.card img {
+  width: 100%;
+}
+
+.card-body {
+  padding: 15px;
+}
+
+.card h3 {
+  margin: 0;
+}
+
+.card button {
+  margin-top: 10px;
+  padding: 10px;
+  background: #1565a0;
+  color: white;
+  border: none;
+  border-radius: 6px;
+}
+
+/* TESTIMONIAL */
+.testimonials {
+  background: white;
+  padding: 50px 20px;
+}
+
+.test-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.test-card {
+  background: #f5f7fb;
+  padding: 20px;
+  border-radius: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>Start Your Canva & AI Learning Journey</h1>
+  <p>Practical training for marketers, teams and beginners</p>
+
+  <div class="stats">
+    <div class="stat">7 Courses</div>
+    <div class="stat">600+ Students</div>
+    <div class="stat">98% Satisfaction</div>
+  </div>
+</section>
+
+<!-- COURSES -->
+<section class="container">
+  <h2>Available Courses</h2>
+
+  <div class="course-grid">
+
+    <div class="card">
+      <img src="https://via.placeholder.com/400x200">
+      <div class="card-body">
+        <h3>Canva for Marketing</h3>
+        <p>Beginner friendly course</p>
+        <button onclick="window.open('YOUR_FORM_LINK')">Enrol Now</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://via.placeholder.com/400x200">
+      <div class="card-body">
+        <h3>AI Content Creation</h3>
+        <p>Learn AI tools for marketing</p>
+        <button onclick="window.open('YOUR_FORM_LINK')">Enrol Now</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- TESTIMONIAL -->
+<section class="testimonials">
+  <h2 style="text-align:center;">What Our Students Say</h2>
+
+  <div class="test-grid">
+    <div class="test-card">
+      ⭐⭐⭐⭐⭐ <br>
+      “Very practical and easy to follow!”
+    </div>
+
+    <div class="test-card">
+      ⭐⭐⭐⭐⭐ <br>
+      “Helped me improve my marketing immediately.”
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
