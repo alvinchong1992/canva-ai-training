@@ -20,63 +20,89 @@ body {
 }
 
 .hero h1 {
-  font-size: 40px;
+  font-size: 42px;
   max-width: 600px;
+  line-height: 1.2;
+}
+
+.hero p {
+  opacity: 0.9;
 }
 
 .stats {
   display: flex;
-  gap: 20px;
+  gap: 15px;
   margin-top: 30px;
+  flex-wrap: wrap;
 }
 
 .stat {
   background: rgba(255,255,255,0.1);
-  padding: 15px;
+  padding: 12px 18px;
   border-radius: 10px;
-  text-align: center;
+  font-weight: bold;
 }
 
-/* COURSE SECTION */
+/* SECTION */
 .container {
   padding: 40px 20px;
+  max-width: 1100px;
+  margin: auto;
 }
 
+/* COURSES */
 .course-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
 }
 
 .card {
   background: white;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
 }
 
 .card img {
   width: 100%;
+  height: 180px;
+  object-fit: cover;
 }
 
 .card-body {
-  padding: 15px;
+  padding: 18px;
 }
 
-.card h3 {
-  margin: 0;
+.status {
+  color: green;
+  font-weight: bold;
+  font-size: 14px;
 }
 
-.card button {
+.price {
+  font-size: 22px;
+  font-weight: bold;
   margin-top: 10px;
-  padding: 10px;
+}
+
+button {
+  margin-top: 12px;
+  width: 100%;
+  padding: 12px;
   background: #1565a0;
   color: white;
   border: none;
   border-radius: 6px;
+  cursor: pointer;
 }
 
-/* TESTIMONIAL */
+/* TESTIMONIALS */
 .testimonials {
   background: white;
   padding: 50px 20px;
@@ -86,12 +112,35 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 15px;
+  max-width: 1100px;
+  margin: auto;
 }
 
 .test-card {
   background: #f5f7fb;
   padding: 20px;
   border-radius: 10px;
+}
+
+/* MODAL */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+}
+
+.modal-content {
+  background: white;
+  margin: 10% auto;
+  padding: 20px;
+  width: 90%;
+  max-width: 400px;
+  border-radius: 12px;
+  text-align: left;
 }
 </style>
 </head>
@@ -116,28 +165,32 @@ body {
 
   <div class="course-grid">
 
-    <div class="card">
+    <div class="card" onclick="openModal('Canva Training')">
       <img src="https://via.placeholder.com/400x200">
       <div class="card-body">
-        <h3>Canva for Marketing</h3>
-        <p>Beginner friendly course</p>
-        <button onclick="window.open('YOUR_FORM_LINK')">Enrol Now</button>
+        <p class="status">● Open for Registration</p>
+        <h3>Canva for Sales & Marketing</h3>
+        <p>Beginner friendly | Hands-on training</p>
+        <p class="price">RM 45</p>
+        <button>View Details</button>
       </div>
     </div>
 
-    <div class="card">
+    <div class="card" onclick="openModal('AI Course')">
       <img src="https://via.placeholder.com/400x200">
       <div class="card-body">
+        <p class="status">● Open for Registration</p>
         <h3>AI Content Creation</h3>
         <p>Learn AI tools for marketing</p>
-        <button onclick="window.open('YOUR_FORM_LINK')">Enrol Now</button>
+        <p class="price">RM 88</p>
+        <button>View Details</button>
       </div>
     </div>
 
   </div>
 </section>
 
-<!-- TESTIMONIAL -->
+<!-- TESTIMONIALS -->
 <section class="testimonials">
   <h2 style="text-align:center;">What Our Students Say</h2>
 
@@ -153,6 +206,37 @@ body {
     </div>
   </div>
 </section>
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <h2 id="courseTitle"></h2>
+    <p>Date: 10 June</p>
+    <p>Time: 9am – 5pm</p>
+    <p>Venue: Kota Kinabalu</p>
+
+    <br>
+
+    <a href="YOUR_FORM_LINK" target="_blank">
+      <button>Enrol Now</button>
+    </a>
+
+    <br><br>
+
+    <button onclick="closeModal()">Close</button>
+  </div>
+</div>
+
+<script>
+function openModal(title) {
+  document.getElementById("modal").style.display = "block";
+  document.getElementById("courseTitle").innerText = title;
+}
+
+function closeModal() {
+  document.getElementById("modal").style.display = "none";
+}
+</script>
 
 </body>
 </html>
